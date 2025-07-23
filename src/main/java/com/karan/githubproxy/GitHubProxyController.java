@@ -34,7 +34,7 @@ public class GitHubProxyController {
      * @param username The GitHub username to search for.
      * @return A Mono containing the JSON response from the GitHub API as a String.
      */
-    @CrossOrigin(origins = "http://localhost:5173")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5173"})
     @GetMapping("/api/users/{username}")
     public Mono<String> getUserProfile(@PathVariable String username) {
         System.out.println("Proxying request for user profile: " + username);

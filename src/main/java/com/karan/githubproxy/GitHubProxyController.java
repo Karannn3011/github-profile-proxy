@@ -53,7 +53,7 @@ public class GitHubProxyController {
      * @param username The GitHub username whose repositories to fetch.
      * @return A Mono containing the JSON list of repositories as a String.
      */
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5173"})
     @GetMapping("/api/users/{username}/repos")
     public Mono<String> getUserRepos(@PathVariable String username) {
         System.out.println("Proxying request for user repos: " + username);
